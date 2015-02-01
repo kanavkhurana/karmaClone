@@ -22,6 +22,7 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+	box-sizing: border-box;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -49,6 +50,12 @@ table {
 	border-spacing: 0;
 }
 /*------------*/
+nav{
+	position: fixed;
+	top: 0;
+	width: 100%;
+	background-color: white;
+}
 .links{
 	cursor: pointer;
 	display: inline;
@@ -110,6 +117,7 @@ button{
 	color:white;
 	background-color: #f15a29;
 	/*Ordering is key - border style to be defined before mentioning border color */
+	/* Can be defined in a single line of code - ordering has to be maintained*/
 	/*border: 1px solid;*/
 	/* Didn't understand */
 	border-style:none;
@@ -119,12 +127,13 @@ button{
     font-size: 1.125rem;
     padding: 1rem 1.5rem;
 	/*Doesn't inherit the color property from the 'content' class? */
+	/*IULIA TO CHECK */
 }
 button:hover{
 	background-color: #d9400e;
 	border-color: #cf3d0e;
 }
-.content{
+.introduction .content{
 	width:60%;
 	margin:0 auto;
 	padding-top:12rem;
@@ -132,6 +141,11 @@ button:hover{
 	height: 100%;
 	color:white;
 	font-weight: 300;
+}
+.description{
+	/*What difference does padding-bottom vs margin-bottom make? */
+	margin-top: 7.875rem;
+	padding-bottom: 5rem;
 }
 .description h2{
 	font-size: 2.75rem;
@@ -145,7 +159,8 @@ button:hover{
 }
 .description li{
 	float:left;
-	/*Why float and why not display:inline? */;
+	/*Try clearing the li's using only CSS - removing the empty div */
+	/*Why float and why not display:inline? - DONE*/;
 	width: 33.33%
 }
 .description ul{
@@ -156,5 +171,46 @@ button:hover{
 	/*float: left;*/
 	/*width: 100%;*/
 	text-align: center;
-	margin-top: 7.875rem;
+	/*margin-top: 7.875rem;*/
+}
+footer{
+	/*float:left;*/
+	/*clear:both;*/
+	text-align: center;
+	padding-bottom: 9.375rem;
+	/*width:100%;*/
+}
+footer .content{
+	width: 60%;
+	margin: 0 auto;
+}
+footer .content li{
+	display: inline-block;
+	cursor: pointer;
+	border-radius: 1.25rem;
+	width: 2.5rem;
+	height: 2.5rem;
+	margin: 1.25rem 5px;
+	border: 1px solid #eaebec;
+	padding: 0.625rem 0;
+	text-align: center;
+}
+footer .content .twitter{
+	color: #55acee;
+}
+footer .content .facebook{
+	color: #4c66a4;
+}
+footer .content .insta{
+	color: #3f729b;
+}
+footer .copyright{
+	font-size: 0.9rem;
+	font-weight: 300;
+	color: #838994;
+}
+footer hr{
+	border: 0;
+	border-top: 1px solid #eaebec;
+	margin: 1.313rem 0;
 }
